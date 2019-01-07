@@ -7,6 +7,9 @@ source ~/.macsetup/base.sh
 echo ""
 print_cyan "Starting setup open jdk..."
 
+# Open JDK 8
+# https://www.azul.com/downloads/?version=java-8-lts&os=macos&package=jdk#zulu
+# Open JDK 11, 17, 21
 # https://learn.microsoft.com/zh-cn/java/openjdk/download
 
 function install_ms_open_jdk() {
@@ -48,5 +51,6 @@ fi
 
 cd ~/Development
 
-install_ms_open_jdk $USER_PWD 11 11.0.21
-# install_ms_open_jdk $USER_PWD 17 17.0.9
+install_ms_open_jdk $USER_PWD 11 11.0.22
+# install_ms_open_jdk $USER_PWD 17 17.0.10
+# install_ms_open_jdk $USER_PWD 21 21.0.2
