@@ -37,8 +37,6 @@ npm uninstall -g eslint-plugin-html
 npm uninstall -g sequelize-auto
 npm uninstall -g bash-language-server
 
-cp ~/.macsetup/local/.zshrc.local.sh ~/.zshrc.local.sh
-
 rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -f ~/.gitconfig

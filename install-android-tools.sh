@@ -20,8 +20,8 @@ fi
 # https://github.com/anestisb/vdexExtractor
 git clone https://github.com/anestisb/vdexExtractor.git ~/Development/vdexExtractor
 cd ~/Development/vdexExtractor && bash make.sh
-brew_install_formulae zlib-devel
 
+brew_install_formulae zlib-devel
 brew_install_formulae apktool
 brew_install_formulae dex2jar
 

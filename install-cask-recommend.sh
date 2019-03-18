@@ -20,7 +20,9 @@ print_cyan "Installing Homebrew cask recommended..."
 # Slack.app (App)
 # ```
 
-brew_install_cask_app "zeplin" "Zeplin.app"
+
+# 设计稿标注
+# brew_install_cask_app "zeplin" "Zeplin.app"
 
 # 开源 sqlite 数据库浏览器
 # brew_install_cask_app "db-browser-for-sqlite" "DB Browser for SQLite.app"
@@ -38,7 +40,7 @@ brew_install_cask_app "drawio" "draw.io.app"
 brew_install_cask_app "hiddenbar" "Hidden Bar.app"
 
 # 开源 Mac 强大的播放器
-# brew_install_cask_app "iina" "IINA.app"
+brew_install_cask_app "iina" "IINA.app"
 
 # 键盘按键的记录器
 brew_install_cask_app "keycastr" "KeyCastr.app"
@@ -47,7 +49,7 @@ brew_install_cask_app "keycastr" "KeyCastr.app"
 brew_install_cask_app "motrix" "Motrix.app"
 
 # 开源 文档编辑器
-# brew_install_cask_app "obsidian" "Obsidian.app"
+brew_install_cask_app "obsidian" "Obsidian.app"
 
 # 开源 状态栏工具切换
 brew_install_cask_app "only-swich" "Only Switch.app"

@@ -39,74 +39,6 @@ function print_cyan() {
     echo "${tty_cyan}$1${tty_reset}"
 }
 
-function brew_install() {
-    quiet=false
-
-    while getopts ":q" opt
-    do
-        case $opt in
-            q)
-                quiet=true
-                ;;
-            ? )
-                print_red "Unrecognized argument"
-                print_red "Usage: brew_install -q package_name"
-                return 1
-                ;;
-        esac
-    done
-
-    shift "$((OPTIND-1))"
-    if [ -z "$1" ]; then
-        print_red "Usage: brew_install [-q] package_name"
-    fi
-
-    export_bin_path
-    if [[ ! -e $bin_path/$1 ]]; then
-        if [ "$quiet" = false ]; then
-            print_green "Installing $1"
-        fi
-        brew install $1
-    else
-        if [ "$quiet" = false ]; then
-            print_yellow "You have installed $1"
-        fi
-    fi
-}
-
-function brew_install_formulae() {
-    if [ $# != 1 ]; then
-        print_red "Usage: brew_install_formulae formula_name"
-        return 1
-    fi
-
-    if brew ls --versions $1 > /dev/null; then
-        print_yellow "You have installed $1"
-    else
-        print_green "Installing formulae $1"
-        if is_arm_cpu; then
-            arch -arm64 brew install $1
-        else
-            brew install $1
-        fi
-    fi
-}
-
-function brew_install_cask_app() {
-    if [ $# != 2 ]; then
-        print_red "Usage: brew_install_cask_app cask_name app_name"
-        print_red "eg: brew_install_cask_app only-switch Only Switch.app"
-        return 1
-    fi
-
-    if [[ ! -e "/Applications/$2" ]]; then
-        print_green "Installing $2"
-        brew install --cask $1
-    else
-        print_yellow "You have installed $2"
-    fi
-}
-
 # Usage: mv $1 to $1_backup
 function backup_file() {
     if [ $# != 1 ]; then
@@ -175,5 +107,75 @@ function export_bin_path() {
         bin_path=/usr/local/bin
         cellar_path=/usr/local/Cellar
         caskroom_path=/usr/local/Caskroom
+    fi
+}
+
+function brew_install() {
+    quiet=false
+
+    while getopts ":q" opt
+    do
+        case $opt in
+            q)
+                quiet=true
+                ;;
+            ? )
+                print_red "Unrecognized argument"
+                print_red "Usage: brew_install -q package_name"
+                return 1
+                ;;
+        esac
+    done
+
+    shift "$((OPTIND-1))"
+    if [ -z "$1" ]; then
+        print_red "Usage: brew_install [-q] package_name"
+    fi
+
+    export_bin_path
+    if [[ ! -e $bin_path/$1 ]]; then
+        if [ "$quiet" = false ]; then
+            print_green "Installing $1"
+        fi
+        $bin_path/brew install $1
+    else
+        if [ "$quiet" = false ]; then
+            print_yellow "You have installed $1"
+        fi
+    fi
+}
+
+function brew_install_formulae() {
+    if [ $# != 1 ]; then
+        print_red "Usage: brew_install_formulae formula_name"
+        return 1
+    fi
+
+    export_bin_path
+    if $bin_path/brew ls --versions $1 > /dev/null; then
+        print_yellow "You have installed $1"
+    else
+        print_green "Installing formulae $1"
+        if is_arm_cpu; then
+            arch -arm64 $bin_path/brew install $1
+        else
+            $bin_path/brew install $1
+        fi
+    fi
+}
+
+function brew_install_cask_app() {
+    if [ $# != 2 ]; then
+        print_red "Usage: brew_install_cask_app cask_name app_name"
+        print_red "eg: brew_install_cask_app only-switch Only Switch.app"
+        return 1
+    fi
+
+    export_bin_path
+    if [[ ! -e "/Applications/$2" ]]; then
+        print_green "Installing $2"
+        $bin_path/brew install --cask $1
+    else
+        print_yellow "You have installed $2"
     fi
 }

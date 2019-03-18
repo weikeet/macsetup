@@ -5,19 +5,16 @@ source ~/.macsetup/base.sh
 
 print_cyan "
 Shell 脚本会自动安装和初始化开发环境 (已安装的不会重复安装, 自动备份已有配置项)
-- 必要的可执行程序 (wget, autojump, cmake, gawk, node...)
-- 必要的 App (iTerm2, Chrome, Slack, WeChat, SourceTree, Visual Studio Code)
+- 安装 Homebrew
+- 安装必要的可执行程序 (wget, autojump, cmake, gawk, node...)
+- 安装必要的 App (iTerm2, Chrome, WeChat, SourceTree, Visual Studio Code)
 - 配置 Git
 - 安装 oh-my-zsh
 - 安装 Python 虚拟环境
-- 安装 Java OpenJDK 11
-- 配置 Android 开发环境 (可选)
-- 推荐的 App (可选)(Zeplin, DB Browser, Lemon, SwitchHosts, draw.io, Hidden Bar, IINA, KeyCastr, Motrix, Obsidian, Only Switch)
+- 安装 Java OpenJDK 11, 17, 21
+- 安装 Android 开发环境 (可选)
+- 安装推荐的 App (可选)(DB Browser, SwitchHosts, draw.io, Hidden Bar, IINA, KeyCastr, Motrix, Obsidian, Only Switch)
 "
-
-# - 配置 iOS 开发环境 (可选)
-# echo -n "\n${tty_green}是否安装 iOS 开发环境 (未实现)(y/n): ${tty_reset}"
-# read IS_SETUP_IOS
 
 echo -n "\n${tty_green}是否安装 Android 开发环境 (y/n): ${tty_reset}"
 read IS_SETUP_ANDROID
@@ -68,7 +65,7 @@ fi
 if [[ ! -e $bin_path/brew ]]; then
     echo -n "${tty_green}请选择 Homebrew 安装源
     1. 国外源 (有代理时的最佳选择)
-    2. 国内源 (终端未连接到代理时建议使用) ${tty_reset}"
+    2. 国内源 (访问外网不通畅时建议使用) ${tty_reset}"
 
     echo -n "${tty_green}请输入序号: ${tty_reset}"
     read SOURCE_TYPE
@@ -110,16 +107,12 @@ if [[ $USER_PWD != "" ]]; then
     bash env/open_jdk_install.sh $USER_PWD
 fi
 
-if [[ $IS_SETUP_IOS == "y" ]]; then
-    bash install-ios.sh &
-fi
-
 if [[ $IS_SETUP_ANDROID == "y" ]]; then
     bash install-android.sh &
 fi
 
 if [[ $IS_SETUP_ANDROID_TOOL == "y" ]]; then
-    bash env/android_tools.sh &
+    bash install-android-tools.sh &
 fi
 
 if [[ $IS_INSTALL_RECOMMEND_APP == "y" ]]; then

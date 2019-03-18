@@ -1,13 +1,18 @@
+# 配置 Homebrew 可执行程序存放路径
+export PATH="$PATH:/opt/homebrew/bin"
+
 # JDK Manager
 # Microsoft jdk: https://docs.microsoft.com/en-us/java/openjdk/download
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-17.jdk/Contents/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 
-# /usr/libexec/java_home -V
-# Matching Java Virtual Machines (2):
-#     17.0.3 (arm64) "Microsoft Build of OpenJDK" - "Microsoft Build of OpenJDK 17" /Library/Java/JavaVirtualMachines/microsoft-17.jdk/Contents/Home
-#     11.0.15 (arm64) "Microsoft Build of OpenJDK" - "Microsoft Build of OpenJDK 11" /Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
+# $ /usr/libexec/java_home -V
+# Matching Java Virtual Machines (4):
+#     21.0.2 (arm64) "Microsoft" - "OpenJDK 21.0.2" /Library/Java/JavaVirtualMachines/microsoft-21.jdk/Contents/Home
+#     17.0.10 (arm64) "Microsoft" - "OpenJDK 17.0.10" /Library/Java/JavaVirtualMachines/microsoft-17.jdk/Contents/Home
+#     11.0.22 (arm64) "Microsoft" - "OpenJDK 11.0.22" /Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
+#     1.8.0_402 (arm64) "Azul Systems, Inc." - "Zulu 8.76.0.17" /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 
 
 
