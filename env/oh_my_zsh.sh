@@ -61,3 +61,5 @@ if [[ ! -e $personal_config ]]; then
     print_green "Create personal config file: $personal_config"
     touch $personal_config
 fi
+
+print_green "You can custom zshrc in $personal_config"
