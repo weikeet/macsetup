@@ -3,6 +3,8 @@ export ANDROID_HOME=/Users/weicools/Library/Android/sdk
 
 
 # Android adb
+alias adbin="adb install -r"
+
 alias adbresume="adb shell dumpsys activity activities | grep mResumedActivity"
 
 alias adbwindow="adb shell dumpsys window windows |grep \"Window #\""
@@ -27,13 +29,9 @@ alias uiviewer="~/Library/Android/sdk/tools/bin/uiautomatorviewer"
 # Android emulator
 alias emulator="~/Library/Android/sdk/emulator/emulator"
 
-# Cmake: brew install cmake
-# alias cmake="~/Library/Android/sdk/cmake/3.18.1/bin/cmake"
-
 # Open android project
 alias astudio="open -a /Applications/Android\ Studio.app"
 
-# Decompile tools
-alias vdexExtractor="~/Documents/AppPlugins/vdexExtractor/bin/vdexExtractor"
-alias dex_converter="~/Documents/AppPlugins/9.0_darwin-x86_64_shared/bin/compact_dex_converter"
-alias jadx-de="python3 ~/Projects/Weicools/PyCharm/awesome-script/script/decompile/de_dex_jar.py"
+# Decompile tools TODO
+alias vdexExtractor="~/Development/vdexExtractor/bin/vdexExtractor"
+alias cdexConverter="~/Development/cdexConverter/bin/compact_dex_converter"

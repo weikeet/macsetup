@@ -19,8 +19,11 @@
     zipHead = !git archive --format=zip HEAD --output
     rmd = !git ls-files -d  -z | xargs -0 git rm
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[difftool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+	path = 
 [log]
     date = local
 [core]
@@ -44,3 +47,8 @@
     textconv = exiftool
 [diff "plist"]
     textconv = plutil -convert xml1 -o -
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

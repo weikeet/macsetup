@@ -2,6 +2,9 @@
 
 source ~/.macsetup/base.sh
 
+echo ""
+print_cyan "Starting setup android reverse tools..."
+
 if [[ ! -e ~/Development ]]; then
     mkdir ~/Development
 fi

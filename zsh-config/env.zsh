@@ -1,8 +1,5 @@
 # JDK Manager
 # Microsoft jdk: https://docs.microsoft.com/en-us/java/openjdk/download
-# brew install microsoft-openjdk11
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
-# brew install microsoft-openjdk
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
 
 # /usr/libexec/java_home -V
@@ -18,11 +15,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Hom
 # Install with Homebrew 配置方法
 # export PATH="$PATH:/usr/local/opt/python@3.8/Frameworks/Python.framework/Versions/3.8/bin"
 
-# Python3 virtual env
-# mkdir Pyenv && cd Pyenv
-# python3 -m pip install virtualenv
-# python3 -m virtualenv py3.8
-# source /Volumes/Common/Projects/Pyenv/py3.8/bin/activate
+# Python3 virtual env, see env/python_venv.sh
+source ~/Development/PythonEnv/venv3/bin/activate
 
 
 

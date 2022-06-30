@@ -40,10 +40,12 @@ source $ZSH/oh-my-zsh.sh
 # ##############################################################################
 
 # env
-source ~/ZshConfig/env.zsh
+source ~/.macsetup/zsh-config/env.zsh
 
 # alias
-source ~/ZshConfig/alias.zsh
+source ~/.macsetup/zsh-config/alias.zsh
 
 # android alias
-source ~/ZshConfig/alias_android.zsh
+source ~/.macsetup/zsh-config/alias_android.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

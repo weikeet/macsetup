@@ -1,44 +1,46 @@
 #!/bin/sh
 
-source base.sh
+source ~/.macsetup/base.sh
 
-# ##############################################################################
-# install formulae #############################################################
-# ##############################################################################
-
-if brew ls --versions gnu-sed > /dev/null; then
-    echo "You have installed gsed"
-else
-    brew install gnu-sed
-fi
-
-# install sz/rz
-if brew ls --versions lrzsz > /dev/null; then
-    echo "You have installed lrzsz"
-else
-    brew install lrzsz
-fi
+echo ""
+print_cyan "Installing Homebrew formulae..."
 
 # brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-brew_install autojump
-brew_install cmake
-brew_install gawk
-brew_install wget
-brew_install nvm
-brew_install exiv2
-brew_install ssh-copy-id
-brew_install imagemagick
-brew_install catimg
-brew_install gpg
-brew_install icdiff
-brew_install scmpuff
-brew_install fzf
-brew_install fd
-brew_install the_silver_searcher
-brew_install nvim
-brew_install exiftool
-brew_install archey
-brew_install ranger
-brew_install git-lfs && git lfs install
-brew_install cloc
-$(brew --prefix)/opt/fzf/install --all
+
+brew_install_formulae nvm
+brew_install_formulae ssh-copy-id
+brew_install_formulae imagemagick
+brew_install_formulae the_silver_searcher
+
+brew_install_formulae autojump
+brew_install_formulae cmake
+brew_install_formulae gawk
+brew_install_formulae wget
+brew_install_formulae exiv2
+brew_install_formulae catimg
+brew_install_formulae gpg
+brew_install_formulae icdiff
+brew_install_formulae scmpuff
+brew_install_formulae fzf
+brew_install_formulae fd
+brew_install_formulae nvim
+brew_install_formulae exiftool
+brew_install_formulae archey
+brew_install_formulae ranger
+brew_install_formulae cloc
+brew_install_formulae gnu-sed
+brew_install_formulae lrzsz
+
+if brew ls --versions git-lfs > /dev/null; then
+    print_yellow "You have installed git-lfs"
+else
+    brew install git-lfs
+    git lfs install
+fi
+
+if brew ls --versions fzf > /dev/null; then
+    print_yellow "You have installed fzf"
+else
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install --all
+fi

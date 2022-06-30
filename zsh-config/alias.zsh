@@ -6,4 +6,4 @@ alias fix_codesign="sudo codesign --force --deep --sign - "
 
 alias cbuilds='git clone git@github.com:lecymeng/buildSrc.git'
 
-alias grun='bash ~/.macsetup/zsh-config/grun.sh'
+alias grun='bash ~/.macsetup/zsh-config/g_run_cpp.sh'
