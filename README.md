@@ -5,7 +5,7 @@
 只需要执行以下代码即可：
 
 ```shell
-curl https://raw.githubusercontent.com/lecymeng/mac-setup/master/setup.sh | sh
+curl https://raw.githubusercontent.com/lecymeng/mac-setup/master/setup.sh | bash
 ```
 
 ## links
