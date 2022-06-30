@@ -83,6 +83,7 @@ function brew_install_formulae() {
     if brew ls --versions $1 > /dev/null; then
         print_yellow "You have installed $1"
     else
+        print_green "Installing formulae $1"
         brew install $1
     fi
 }

@@ -3,19 +3,20 @@
 source ~/.macsetup/base.sh
 
 
-echo -n "${tty_blue}请输入用户密码: ${tty_reset}"
-read -s USER_PWD
 echo ""
+echo -n "${tty_green}请输入用户密码: ${tty_reset}"
+read -s USER_PWD
 
 
+echo ""
 git_name=$(git config user.name)
 git_email=$(git config user.email)
 
 if [[ -z $git_name ]] || [[ -z $git_email ]]; then
-    echo -n "${tty_blue}请输入 Git 用户名 (例如: hua.li): ${tty_reset}"
+    echo -n "${tty_green}请输入 Git 用户名 (例如: hua.li): ${tty_reset}"
     read GIT_USERNAME
 
-    echo -n "${tty_blue}请输入 Git 邮箱 (例如: hua.li@gmail.com): ${tty_reset}"
+    echo -n "${tty_green}请输入 Git 邮箱 (例如: hua.li@gmail.com): ${tty_reset}"
     read GIT_EMAIL
 
     git config --global user.name "$GIT_USERNAME"
@@ -25,6 +26,7 @@ else
 fi
 
 
+echo ""
 if [[ $(sysctl -n machdep.cpu.brand_string) =~ "Apple" ]]; then
     bin_path=/opt/homebrew/bin
 else
@@ -35,7 +37,7 @@ if [[ ! -e $bin_path/brew ]]; then
     1. 国外源 (有代理时的最佳选择)
     2. 国内源 (终端未连接到代理时建议使用) ${tty_reset}"
 
-    echo -n "${tty_blue}请输入序号: ${tty_reset}"
+    echo -n "${tty_green}请输入序号: ${tty_reset}"
     read SOURCE_TYPE
 
     if [[ $SOURCE_TYPE == "1" ]]; then
@@ -56,6 +58,7 @@ else
     print_yellow "You have installed brew"
 fi
 
+echo ""
 
 bash install-formulae.sh
 
