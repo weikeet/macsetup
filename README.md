@@ -1,6 +1,17 @@
+# macOS setup
 
+macOS development environment auto setup.
 
-## 安装方式
+## Requirements
+
+- [Command Line Tools](https://developer.apple.com/download/more/)
+- [Git](https://git-scm.com/)
+
+安装好 [Command Line Tools](https://developer.apple.com/download/more/) 后，就可以使用 [Git](https://git-scm.com/) 命令了。
+
+## 使用方法
+
+### 自动执行
 
 只需要执行以下代码即可：
 
@@ -8,7 +19,8 @@
 curl https://raw.githubusercontent.com/lecymeng/mac-setup/master/setup.sh | sh && cd ~/.macsetup && bash install.sh
 ```
 
-### 手动 clone
+### 手动执行
+
 手动 clone 到 `~/.macsetup` 目录下，然后执行 `bash install.sh` 即可。
 
 ```shell
@@ -20,3 +32,8 @@ cd ~/.macsetup && bash install.sh
 ## links
 
 - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+- [bestswifter/macbootstrap](https://github.com/bestswifter/macbootstrap/)
+- [nicolashery/mac-dev-setup](https://github.com/nicolashery/mac-dev-setup)
+- [donnemartin/dev-setup](https://github.com/donnemartin/dev-setup)
+- [bkuhlmann/mac_os-config](https://github.com/bkuhlmann/mac_os-config)
+- [sourabhbajaj/mac-setup/](https://sourabhbajaj.com/mac-setup/)
