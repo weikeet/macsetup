@@ -30,7 +30,7 @@ alias uiviewer="~/Library/Android/sdk/tools/bin/uiautomatorviewer"
 alias emulator="~/Library/Android/sdk/emulator/emulator"
 
 # Open android project
-alias astudio="open -a /Applications/Android\ Studio.app"
+alias openas="open -a /Applications/Android\ Studio.app"
 
 # Decompile tools TODO
 alias vdexExtractor="~/Development/vdexExtractor/bin/vdexExtractor"
