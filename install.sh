@@ -3,6 +3,45 @@
 source ~/.macsetup/base.sh
 
 
+print_cyan "
+Shell 脚本会自动安装和初始化开发环境 (已安装的不会重复安装)
+- 必要的可执行程序 (wget, autojump, cmake, gawk...)
+- 必要的 App (iTerm2, Chrome, Slack, WeChat, SourceTree, Visual Studio Code, DB Browser for SQLite, Lemon, Zeplin, Draw.io...)
+- 配置 Git
+- 配置 Python 虚拟环境
+- 安装 OpenJDK 11
+- 安装 oh-my-zsh
+- Android 开发环境 (可选)
+- iOS 开发环境 (可选)
+"
+
+
+echo ""
+echo -n "${tty_green}是否安装 iOS 开发环境 (未实现)(y/n): ${tty_reset}"
+read IS_SETUP_IOS
+
+if [[ ! $IS_SETUP_IOS == "y" ]]; then
+    IS_SETUP_IOS=n
+fi
+
+echo ""
+echo -n "${tty_green}是否安装 Android 开发环境 (y/n): ${tty_reset}"
+read IS_SETUP_ANDROID
+
+if [[ $IS_SETUP_ANDROID == "y" ]]; then
+    echo ""
+    echo -n "${tty_green}是否安装 Android 开发扩展工具 (反编译等程序) (y/n): ${tty_reset}"
+    read IS_SETUP_ANDROID_TOOL
+
+    if [[ $IS_SETUP_ANDROID_TOOL == "y" ]]; then
+        echo ""
+    fi
+else
+    IS_SETUP_ANDROID=n
+    IS_SETUP_ANDROID_TOOL=n
+fi
+
+
 echo ""
 echo -n "${tty_green}请输入用户密码: ${tty_reset}"
 read -s USER_PWD
@@ -64,6 +103,10 @@ bash install-formulae.sh
 
 bash install-cask.sh
 
+if [[ $IS_SETUP_ANDROID == "y" ]]; then
+    bash install-android.sh
+fi
+
 bash env/bin_links.sh
 
 bash env/git_config.sh
@@ -74,4 +117,6 @@ bash env/python_venv.sh
 
 bash env/open_jdk_install.sh $USER_PWD
 
-# bash env/android_reverse.sh
+if [[ $IS_SETUP_ANDROID_TOOL == "y" ]]; then
+    bash env/android_reverse.sh
+fi
