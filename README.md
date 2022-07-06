@@ -29,6 +29,18 @@ git clone https://github.com/lecymeng/mac-setup.git ~/.macsetup
 cd ~/.macsetup && zsh install.sh
 ```
 
+## Q & A
+
+### Zsh detects insecure completion-dependent directories
+
+安装 oh-my-zsh 后显示 Zsh detects insecure completion-dependent directories ... 警告
+
+解决方法：
+
+```
+bash ~/.macsetup/env/oh_my_zsh_fixed.sh
+```
+
 ## links
 
 - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
@@ -37,3 +49,6 @@ cd ~/.macsetup && zsh install.sh
 - [donnemartin/dev-setup](https://github.com/donnemartin/dev-setup)
 - [bkuhlmann/mac_os-config](https://github.com/bkuhlmann/mac_os-config)
 - [sourabhbajaj/mac-setup/](https://sourabhbajaj.com/mac-setup/)
+- [Zsh 开发指南](https://zhuanlan.zhihu.com/p/28900182)
+- [shell 数组、字典、source、split](https://blog.csdn.net/u014297722/article/details/54601660)
+- [fixed declare: -A: invalid option](https://stackoverflow.com/questions/6047648/associative-arrays-error-declare-a-invalid-option)
