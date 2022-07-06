@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # issue: Zsh detects insecure completion-dependent directories
 # links: https://stackoverflow.com/questions/61433167/zsh-detects-insecure-completion-dependent-directories

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # 字符串染色程序
 if [[ -t 1 ]]; then
