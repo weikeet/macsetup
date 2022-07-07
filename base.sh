@@ -95,7 +95,11 @@ function backup_file() {
     fi
 
     if [[ -e $1 ]]; then
-        mv $1 $1".bak"
+        if [[ -L $1 ]]; then
+            mv $1 $1".link.bak"
+        else
+            mv $1 $1".bak"
+        fi
     fi
 }
 

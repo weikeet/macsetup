@@ -52,3 +52,6 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [Zsh 开发指南](https://zhuanlan.zhihu.com/p/28900182)
 - [shell 数组、字典、source、split](https://blog.csdn.net/u014297722/article/details/54601660)
 - [fixed declare: -A: invalid option](https://stackoverflow.com/questions/6047648/associative-arrays-error-declare-a-invalid-option)
+- [10分钟入门Shell脚本编程](https://juejin.cn/post/6844903553119748109)
+- [Shell 脚本常用语法](https://juejin.cn/post/6962032698697187364)
+- [Shell](http://billie66.github.io/TLCL/book/index.html)
