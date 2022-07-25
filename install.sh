@@ -5,14 +5,15 @@ source ~/.macsetup/base.sh
 
 print_cyan "
 Shell 脚本会自动安装和初始化开发环境 (已安装的不会重复安装)
-- 必要的可执行程序 (wget, autojump, cmake, gawk...)
-- 必要的 App (iTerm2, Chrome, Slack, WeChat, SourceTree, Visual Studio Code, DB Browser for SQLite, Lemon, Zeplin, Draw.io...)
+- 必要的可执行程序 (wget, autojump, cmake, gawk, node...)
+- 必要的 App (iTerm2, Chrome, Slack, WeChat, SourceTree, Visual Studio Code)
 - 配置 Git
-- 配置 Python 虚拟环境
-- 安装 OpenJDK 11
 - 安装 oh-my-zsh
-- Android 开发环境 (可选)
-- iOS 开发环境 (可选)
+- 安装 Python 虚拟环境
+- 安装 Java OpenJDK 11
+- 配置 iOS 开发环境 (可选)
+- 配置 Android 开发环境 (可选)
+- 推荐的 App (可选)(Zeplin, DB Browser, Lemon, SwitchHosts, draw.io, Hidden Bar, IINA, KeyCastr, Motrix, Obsidian, Only Switch)
 "
 
 
@@ -39,6 +40,14 @@ if [[ $IS_SETUP_ANDROID == "y" ]]; then
 else
     IS_SETUP_ANDROID=n
     IS_SETUP_ANDROID_TOOL=n
+fi
+
+echo ""
+echo -n "${tty_green}是否安装 推荐的 App (建议选择)(y/n): ${tty_reset}"
+read IS_INSTALL_RECOMMEND_APP
+
+if [[ ! $IS_INSTALL_RECOMMEND_APP == "y" ]]; then
+    IS_INSTALL_RECOMMEND_APP=n
 fi
 
 
@@ -97,15 +106,12 @@ else
     print_yellow "You have installed brew"
 fi
 
+
 echo ""
 
 bash install-formulae.sh
 
-bash install-cask.sh
-
-if [[ $IS_SETUP_ANDROID == "y" ]]; then
-    bash install-android.sh
-fi
+bash install-cask-required.sh
 
 bash env/bin_links.sh
 
@@ -117,6 +123,18 @@ bash env/python_venv.sh
 
 bash env/open_jdk_install.sh $USER_PWD
 
+if [[ $IS_SETUP_IOS == "y" ]]; then
+    bash install-ios.sh
+fi
+
+if [[ $IS_SETUP_ANDROID == "y" ]]; then
+    bash install-android.sh
+fi
+
 if [[ $IS_SETUP_ANDROID_TOOL == "y" ]]; then
-    bash env/android_reverse.sh
+    bash env/android_tools.sh
+fi
+
+if [[ $IS_INSTALL_RECOMMEND_APP == "y" ]]; then
+    bash install-cask-recommend.sh
 fi
