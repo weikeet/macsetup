@@ -1,0 +1,95 @@
+010 Editor.app
+Alfred 4.app
+Android Studio Preview.app
+Android Studio.app
+App Cleaner 7.app
+Araxis Merge.app
+BaiduNetdisk_mac.app
+CLion.app
+CheatSheet.app
+ClashX Pro.app
+Craft.app
+DB Browser for SQLite.app
+DMHY.app
+DaisyDisk.app
+DevToys.app
+GPG Keychain.app
+Google Chrome.app
+Hackintool.app
+Hidden Bar.app
+IDAPro
+IINA.app
+Infuse.app
+IntelliJ IDEA.app
+JPEGmini Pro.app
+Jietu.app
+KeyCastr.app
+Keynote.app
+Lark.app
+Listen1.app
+LocalConfig Editor(.dneb).app
+MacWk Updater.app
+MacZip.app
+Microsoft Excel.app
+Microsoft PowerPoint.app
+Microsoft To Do.app
+Microsoft Word.app
+Motrix.app
+Navicat Premium.app
+NeteaseMusic.app
+Numbers.app
+OBS.app
+Obsidian.app
+OmniGraffle.app
+Only Switch.app
+OpenCore Configurator.app
+PDF Expert.app
+PPDuck3.app
+Pages.app
+Pure Writer.app
+PyCharm.app
+QQ.app
+QtScrcpy.app
+Safari.app
+Sip.app
+Sketch.app
+Slack.app
+Sourcetree.app
+StarUML.app
+Steam.app
+Sublime Text.app
+SwiftKotlin.app
+SwitchHosts.app
+SynologyAssistant.app
+Telegram.app
+Tencent Lemon.app
+TencentMeeting.app
+TinyPNG4Mac.app
+Typora.app
+UninstallPKG.app
+Unraid USB Creator.app
+VideoFusion-macOS.app
+Visual Studio Code.app
+WeChat.app
+WebStorm.app
+WebTorrent.app
+WechatExporter.app
+XMind.app
+Xcode.app
+Xnip.app
+Zeplin.app
+Zhumu.app
+aDrive.app
+draw.io.app
+iMovie.app
+iShot.app
+iTerm.app
+lx-music-desktop.app
+mat.app
+miniQpicview.app
+uPic.app
+wxbackup.app
+优酷.app
+爱奇艺.app
+天翼云盘.app
+欢乐斗地主.app
