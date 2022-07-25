@@ -5,93 +5,52 @@ source ~/.macsetup/base.sh
 echo ""
 print_cyan "Installing Homebrew cask recommended..."
 
+# 查看应用详细信息可以使用命令 brew info cask_name/formula_name
+# ```
+# $ brew info slack
+# slack: 4.27.154 (auto_updates)
+# https://slack.com/
+# /opt/homebrew/Caskroom/slack/4.22.0 (119B)
+# From: https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/slack.rb
+# ==> Name
+# Slack
+# ==> Description
+# Team communication and collaboration software
+# ==> Artifacts
+# Slack.app (App)
+# ```
 
-if [[ ! -e /Applications/Zeplin.app ]]; then
-    print_green "Installing Zeplin"
-    brew install --cask zeplin
-else
-    print_yellow "You have installed Zeplin"
-fi
+brew_install_cask_app "zeplin" "Zeplin.app"
 
+# 开源 sqlite 数据库浏览器
+brew_install_cask_app "db-browser-for-sqlite" "DB Browser for SQLite.app"
 
-if [[ ! -e /Applications/DB\ Browser\ for\ SQLite.app ]]; then
-    print_green "Installing DB Browser for SQLite"
-    brew install --cask db-browser-for-sqlite
-else
-    print_yellow "You have installed DB Browser for SQLite"
-fi
+# 开源 mac 清理加速工具
+brew_install_cask_app "tencent-lemon" "Tencent Lemon.app"
 
+# 开源 Hosts 管理工具
+brew_install_cask_app "switchhosts" "SwitchHosts.app"
 
-if [[ ! -e /Applications/Tencent\ Lemon.app ]]; then
-    print_green "Installing Tencent Lemon"
-    brew install --cask tencent-lemon
-else
-    print_yellow "You have installed Tencent Lemon"
-fi
+# 开源 最强画图工具 流程图 UML...
+brew_install_cask_app "drawio" "draw.io.app"
 
+# 开源 Mac 菜单栏管理工具
+brew_install_cask_app "hiddenbar" "Hidden Bar.app"
 
-if [[ ! -e /Applications/SwitchHosts.app ]]; then
-    print_green "Installing SwitchHosts"
-    brew install --cask switchhosts
-else
-    print_yellow "You have installed SwitchHosts"
-fi
+# 开源 Mac 强大的播放器
+brew_install_cask_app "iina" "IINA.app"
 
+# 键盘按键的记录器
+brew_install_cask_app "keycastr" "KeyCastr.app"
 
-if [[ ! -e /Applications/draw.io.app ]]; then
-    print_green "Installing draw.io"
-    brew install --cask drawio
-else
-    print_yellow "You have installed draw.io"
-fi
+# 开源 下载器
+brew_install_cask_app "motrix" "Motrix.app"
 
+# 开源 文档编辑器
+brew_install_cask_app "obsidian" "Obsidian.app"
 
-if [[ ! -e "/Applications/Hidden Bar.app" ]]; then
-    print_green "Installing Hidden Bar.app"
-    brew install --cask hiddenbar
-else
-    print_yellow "You have installed Hidden Bar.app"
-fi
-
-
-if [[ ! -e "/Applications/IINA.app" ]]; then
-    print_green "Installing IINA.app"
-    brew install --cask iina
-else
-    print_yellow "You have installed IINA.app"
-fi
-
-
-if [[ ! -e "/Applications/KeyCastr.app" ]]; then
-    print_green "Installing KeyCastr.app"
-    brew install --cask keycastr
-else
-    print_yellow "You have installed KeyCastr.app"
-fi
-
-
-if [[ ! -e "/Applications/Motrix.app" ]]; then
-    print_green "Installing Motrix.app"
-    brew install --cask keycastr
-else
-    print_yellow "You have installed Motrix.app"
-fi
-
-
-if [[ ! -e "/Applications/Obsidian.app" ]]; then
-    print_green "Installing Obsidian.app"
-    brew install --cask obsidian
-else
-    print_yellow "You have installed Obsidian.app"
-fi
-
-
-if [[ ! -e "/Applications/Only Switch.app" ]]; then
-    print_green "Installing Only Switch.app"
-    brew install --cask only-switch
-else
-    print_yellow "You have installed Only Switch.app"
-fi
+# 开源 状态栏工具切换
+brew_install_cask_app "only-swich" "Only Switch.app"
 
 # quick look plugins
 # quicklook-csv quicklook-json webpquicklook

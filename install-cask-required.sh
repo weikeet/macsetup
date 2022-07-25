@@ -5,6 +5,7 @@ source ~/.macsetup/base.sh
 echo ""
 print_cyan "Installing Homebrew cask required..."
 
+# 更强大的终端应用
 if [[ ! -e /Applications/iTerm.app ]]; then
     print_green "Installing iTerm"
     brew install --cask iterm2
@@ -23,7 +24,7 @@ else
     print_yellow "You have installed iTerm2"
 fi
 
-
+# Chrome 浏览器没啥说的
 if [[ ! -e /Applications/Google\ Chrome.app ]]; then
     print_green "Installing Google Chrome"
     brew install --cask google-chrome
@@ -37,33 +38,14 @@ else
     print_yellow "You have installed Chrome"
 fi
 
+# 工作必备 团队沟通和交流
+brew_install_cask_app "slack" "Slack.app"
 
-if [[ ! -e /Applications/Slack.app ]]; then
-    print_green "Installing Slack"
-    brew install --cask slack
-else
-    print_yellow "You have installed Slack"
-fi
+# 国民级应用
+brew_install_cask_app "wechat" "WeChat.app"
 
+# Git 版本控制工具
+brew_install_cask_app "sourcetree" "SourceTree.app"
 
-if [[ ! -e /Applications/WeChat.app ]]; then
-    print_green "Installing WeChat"
-    brew install --cask wechat
-else
-    print_yellow "You have installed WeChat"
-fi
-
-
-if [[ ! -e /Applications/SourceTree.app ]]; then
-    brew install --cask sourcetree
-else
-    print_yellow "You have installed SourceTree"
-fi
-
-
-if [[ ! -e /Applications/Visual\ Studio\ Code.app ]]; then
-    print_green "Installing Visual Studio Code"
-    brew install --cask visual-studio-code
-else
-    print_yellow "You have installed Visual Studio Code"
-fi
+# 最强 IDE 不用多说
+brew_install_cask_app "visual-studio-code" "Visual Studio Code.app"

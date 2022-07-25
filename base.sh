@@ -88,6 +88,21 @@ function brew_install_formulae() {
     fi
 }
 
+function brew_install_cask_app() {
+    if [ $# != 2 ]; then
+        print_red "Usage: brew_install_cask_app cask_name app_name"
+        print_red "eg: brew_install_cask_app only-switch Only Switch.app"
+        return 1
+    fi
+
+    if [[ ! -e "/Applications/$2" ]]; then
+        print_green "Installing $2"
+        brew install --cask $1
+    else
+        print_yellow "You have installed $2"
+    fi
+}
+
 # Usage: mv $1 to $1_backup
 function backup_file() {
     if [ $# != 1 ]; then
