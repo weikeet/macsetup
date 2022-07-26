@@ -5,13 +5,19 @@ source ~/.macsetup/base.sh
 echo ""
 print_cyan "Starting setup oh-my-zsh..."
 
+# 读取 bin path 到 bin_path
+export_bin_path
+
 # oh-my-zsh
 if [[ ! -e ~/.oh-my-zsh ]]; then
     print_green "Install oh-my-zsh"
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 else
     print_yellow "You have installed oh-my-zsh"
-    cd ~/.oh-my-zsh && git pull --rebase
+    if [[ -e $bin_path/gtimeout ]]; then
+        print_green "Update oh-my-zsh with timeout 15s"
+        cd ~/.oh-my-zsh && gtimeout 15s git pull --rebase
+    fi
 fi
 
 custom_plugins=~/.oh-my-zsh/custom/plugins
@@ -20,7 +26,10 @@ if [[ ! -e $custom_plugins/zsh-autosuggestions ]]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions $custom_plugins/zsh-autosuggestions
 else
     print_yellow "You have installed zsh-autosuggestions"
-    cd $custom_plugins/zsh-autosuggestions && git pull --rebase
+    if [[ -e $bin_path/gtimeout ]]; then
+        print_green "Update zsh-autosuggestions with timeout 10s"
+        cd $custom_plugins/zsh-autosuggestions && gtimeout 10s git pull --rebase
+    fi
 fi
 
 if [[ ! -e $custom_plugins/zsh-syntax-highlighting ]]; then
@@ -28,7 +37,10 @@ if [[ ! -e $custom_plugins/zsh-syntax-highlighting ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $custom_plugins/zsh-syntax-highlighting
 else
     print_yellow "You have installed zsh-syntax-highlighting"
-    cd $custom_plugins/zsh-syntax-highlighting && git pull --rebase
+    if [[ -e $bin_path/gtimeout ]]; then
+        print_green "Update zsh-syntax-highlighting and set timeout 10s"
+        cd $custom_plugins/zsh-syntax-highlighting && gtimeout 10s git pull --rebase
+    fi
 fi
 
 # add eval "$(starship init zsh)" to ~/.zshrc after install starship
