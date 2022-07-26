@@ -89,7 +89,3 @@ mat.app
 miniQpicview.app
 uPic.app
 wxbackup.app
-优酷.app
-爱奇艺.app
-天翼云盘.app
-欢乐斗地主.app

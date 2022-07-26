@@ -8,4 +8,6 @@ g++ -std=c++11 $code_file -o $output_file
 
 if [[ -e $output_file ]]; then
     ./$output_file
+else
+    echo "Error: $output_file not found"
 fi

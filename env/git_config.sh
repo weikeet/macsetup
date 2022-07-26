@@ -11,8 +11,8 @@ git_email=$(git config user.email)
 # link git config
 backup_file ~/.gitconfig
 # backup_file ~/.gitattributes
-cp ~/.macsetup/git-config/.gitconfig ~/.gitconfig
-# cp ~/.macsetup/git-config/.gitattributes ~/.gitattributes
+cp ~/.macsetup/config/git/.gitconfig ~/.gitconfig
+# cp ~/.macsetup/config/git/.gitattributes ~/.gitattributes
 
 if [[ -z $git_name ]] || [[ -z $git_email ]]; then
     name=$(whoami)

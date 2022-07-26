@@ -32,7 +32,8 @@ else
 fi
 
 backup_file ~/.zshrc
-ln -s ~/.macsetup/zsh-config/.zshrc ~/.zshrc
+ln -s ~/.macsetup/config/zsh/.zshrc ~/.zshrc
 
-rm ~/.oh-my-zsh/custom/themes/yss.zsh-theme
-ln -s ~/.macsetup/zsh-config/theme/yss.zsh-theme ~/.oh-my-zsh/custom/themes/yss.zsh-theme
+yss_theme=~/.oh-my-zsh/custom/themes/yss.zsh-theme
+rm $yss_theme
+ln -s ~/.macsetup/config/zsh/theme/yss.zsh-theme $yss_theme

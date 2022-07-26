@@ -37,7 +37,7 @@ cd ~/.macsetup && zsh install.sh
 
 解决方法：
 
-```
+```shell
 bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 ```
 

@@ -1,4 +1,3 @@
-rm -rf ~/.macsetup/
 rm -rf /Applications/MacVim.app/
 rm -rf /Applications/Snap.app/
 rm -f /usr/local/bin/gvim
@@ -44,3 +43,5 @@ rm -f ~/.gitconfig
 rm -f ~/.ssh/config
 rm -rf ~/.vim
 rm -rf ~/.oh-my-zsh
+
+rm -rf ~/.macsetup/
