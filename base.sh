@@ -109,11 +109,18 @@ function backup_file() {
         print_red "Usage: backup_file pat_to_file"
     fi
 
-    if [[ -e $1 ]]; then
-        if [[ -L $1 ]]; then
+    if [[ -L $1 ]]; then
+        if [[ -e $1 ]]; then
             mv $1 $1".link.bak"
         else
+            print_red "File $1 is a link, but it doesn't exist, so delete this link"
+            rm $1
+        fi
+    else
+        if [[ -e $1 ]]; then
             mv $1 $1".bak"
+        else
+            print_red "Backup file $1 doesn't exist"
         fi
     fi
 }
