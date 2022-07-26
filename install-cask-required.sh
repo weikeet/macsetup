@@ -8,6 +8,11 @@ print_cyan "Installing Homebrew cask required..."
 # 更强大的终端应用
 brew_install_cask_app "iterm2" "iTerm.app"
 
+# 更快速的终端应用
+brew_install_cask_app "alacritty" "Alacritty.app"
+backup_file ~/.config/alacritty/alacritty.yml
+ln -s ~/.macsetup/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+
 # 最强浏览器没啥说的
 brew_install_cask_app "google-chrome" "Google Chrome.app"
 

@@ -49,10 +49,21 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [donnemartin/dev-setup](https://github.com/donnemartin/dev-setup)
 - [bkuhlmann/mac_os-config](https://github.com/bkuhlmann/mac_os-config)
 - [sourabhbajaj/mac-setup/](https://sourabhbajaj.com/mac-setup/)
+
+### shell
 - [Zsh 开发指南](https://zhuanlan.zhihu.com/p/28900182)
-- [打开终端总有好心情：我的美化方案及配置分享](https://sspai.com/post/74216)
 - [shell 数组、字典、source、split](https://blog.csdn.net/u014297722/article/details/54601660)
 - [fixed declare: -A: invalid option](https://stackoverflow.com/questions/6047648/associative-arrays-error-declare-a-invalid-option)
 - [10分钟入门Shell脚本编程](https://juejin.cn/post/6844903553119748109)
 - [Shell 脚本常用语法](https://juejin.cn/post/6962032698697187364)
 - [Shell](http://billie66.github.io/TLCL/book/index.html)
+
+### Terminal Beautify
+- [oh-my-zsh](https://ohmyz.sh/)
+- [iTerm2 app](https://iterm2.com/)
+- [Alacritty app](https://alacritty.com/)
+- [macOS App icons](https://www.macosicons.com/)
+- [打开终端总有好心情：我的美化方案及配置分享](https://sspai.com/post/74216)
+- [Dracula iTerm2 theme](https://github.com/dracula/iterm)
+- [Dracula zsh theme](https://github.com/dracula/zsh)
+- [starship](https://starship.rs/)

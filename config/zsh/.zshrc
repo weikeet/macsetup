@@ -48,6 +48,8 @@ source ~/.macsetup/config/zsh/alias.zsh
 # android alias
 source ~/.macsetup/config/zsh/alias_android.zsh
 
+# eval "$(starship init zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /usr/local/bin/neofetch ] && echo "" && neofetch

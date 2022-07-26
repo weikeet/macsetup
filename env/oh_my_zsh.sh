@@ -31,6 +31,9 @@ else
     cd $custom_plugins/zsh-syntax-highlighting && git pull --rebase
 fi
 
+# add eval "$(starship init zsh)" to ~/.zshrc after install starship
+# curl -sS https://starship.rs/install.sh | sh
+
 backup_file ~/.zshrc
 ln -s ~/.macsetup/config/zsh/.zshrc ~/.zshrc
 
