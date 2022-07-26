@@ -165,7 +165,11 @@ function is_arm_cpu() {
 function export_bin_path() {
     if is_apple_cpu; then
         bin_path=/opt/homebrew/bin
+        cellar_path=/opt/homebrew/Cellar
+        caskroom_path=/opt/homebrew/Caskroom
     else
         bin_path=/usr/local/bin
+        cellar_path=/usr/local/Cellar
+        caskroom_path=/usr/local/Caskroom
     fi
 }

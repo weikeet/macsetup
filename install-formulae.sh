@@ -7,7 +7,7 @@ print_cyan "Installing Homebrew formulae..."
 
 # brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
-brew install coreutils
+brew_install_formulae coreutils
 
 # https://github.com/nvm-sh/nvm
 # nvm is a version manager for node.js
