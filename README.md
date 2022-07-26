@@ -63,6 +63,7 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [iTerm2 app](https://iterm2.com/)
 - [Alacritty app](https://alacritty.com/)
 - [macOS App icons](https://www.macosicons.com/)
+- [如何让 iTerm2 在任何界面呼入呼出](https://www.zhihu.com/question/51622732)
 - [打开终端总有好心情：我的美化方案及配置分享](https://sspai.com/post/74216)
 - [Dracula iTerm2 theme](https://github.com/dracula/iterm)
 - [Dracula zsh theme](https://github.com/dracula/zsh)
