@@ -50,6 +50,7 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [bkuhlmann/mac_os-config](https://github.com/bkuhlmann/mac_os-config)
 - [sourabhbajaj/mac-setup/](https://sourabhbajaj.com/mac-setup/)
 - [Zsh 开发指南](https://zhuanlan.zhihu.com/p/28900182)
+- [打开终端总有好心情：我的美化方案及配置分享](https://sspai.com/post/74216)
 - [shell 数组、字典、source、split](https://blog.csdn.net/u014297722/article/details/54601660)
 - [fixed declare: -A: invalid option](https://stackoverflow.com/questions/6047648/associative-arrays-error-declare-a-invalid-option)
 - [10分钟入门Shell脚本编程](https://juejin.cn/post/6844903553119748109)

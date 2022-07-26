@@ -13,6 +13,7 @@ brew_install_formulae nvm
 brew_install_formulae node
 brew_install_formulae jq
 brew_install_formulae autojump
+brew_install_formulae neofetch
 brew_install_formulae cmake
 brew_install_formulae gawk
 brew_install_formulae wget
