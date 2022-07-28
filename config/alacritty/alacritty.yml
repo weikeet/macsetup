@@ -10,18 +10,37 @@ selection:
 window:
   opacity: 0.85
   padding:
-    x: 18
-    y: 16
+    x: 12
+    y: 24
+  # 窗口大小
+  dimensions:
+    columns: 118
+    lines: 36
   dynamic_padding: false
-  decorations: buttonless
+  # - full: 边框和标题栏
+  # - none: 边框和标题栏都没有
+  # - transparent: 标题栏，透明背景和标题栏按钮 (Only macOS)
+  # - buttonless: 标题栏，透明背景，但没有标题栏按钮 (only macOS)
+  decorations: transparent
 
 font:
+  size: 14
+  # 字体
   normal:
-    family: "Menlo"
+    family: 'Menlo'
     style: Regular
-  size: 13.0
+  bold:
+    family: 'Menlo'
+    style: Bold
+  italic:
+    family: 'Menlo'
+    style: Italic
+  bold_italic:
+    family: 'Menlo'
+    style: Bold Italic
+  # 细描边
   use_thin_strokes: true
-  
+
 mouse:
   hide_when_typing: true
 

@@ -67,4 +67,5 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [打开终端总有好心情：我的美化方案及配置分享](https://sspai.com/post/74216)
 - [Dracula iTerm2 theme](https://github.com/dracula/iterm)
 - [Dracula zsh theme](https://github.com/dracula/zsh)
+- [Alacritty 配置指南](https://blog.dreamfever.me/2021/02/13/alacritty-pei-zhi-zhi-nan/)
 - [starship](https://starship.rs/)
