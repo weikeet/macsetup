@@ -44,5 +44,5 @@ source ~/.macsetup/config/zsh/alias_android.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f /usr/local/bin/neofetch ] && echo "" && neofetch
-[ -f /opt/homebrew/bin/neofetch ] && echo "" && neofetch
+# [ -f /usr/local/bin/neofetch ] && echo "" && neofetch
+# [ -f /opt/homebrew/bin/neofetch ] && echo "" && neofetch
