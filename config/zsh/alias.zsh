@@ -10,3 +10,5 @@ alias see-cpu='sysctl -n machdep.cpu.brand_string'
 alias runcpp='bash ~/.macsetup/config/zsh/script/compile_run_cpp.sh'
 alias runjava='bash ~/.macsetup/config/zsh/script/compile_run_java.sh'
 alias runkotlin='bash ~/.macsetup/config/zsh/script/compile_run_kotlin.sh'
+
+alias datec='bash ~/.macsetup/config/zsh/script/date_convert.sh'
