@@ -38,8 +38,6 @@ font:
   bold_italic:
     family: 'Menlo'
     style: Bold Italic
-  # 细描边
-  use_thin_strokes: true
 
 mouse:
   hide_when_typing: true
