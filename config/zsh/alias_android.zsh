@@ -1,5 +1,5 @@
 # Android sdk
-export ANDROID_HOME=/Users/weicools/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
 
 # Android adb
