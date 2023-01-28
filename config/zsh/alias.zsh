@@ -12,3 +12,5 @@ alias runjava='bash ~/.macsetup/config/zsh/script/compile_run_java.sh'
 alias runkotlin='bash ~/.macsetup/config/zsh/script/compile_run_kotlin.sh'
 
 alias datec='bash ~/.macsetup/config/zsh/script/date_convert.sh'
+
+alias bundlein='bash ~/.macsetup/config/zsh/script/install_aab.sh'
