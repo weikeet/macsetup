@@ -16,3 +16,5 @@ alias datec='bash ~/.macsetup/config/zsh/script/date_convert.sh'
 alias bundlein='bash ~/.macsetup/config/zsh/script/install_aab.sh'
 
 alias dockersh='bash ~/.macsetup/config/zsh/script/dockersh.sh'
+alias enhance-install='bash ~/.macsetup/config/zsh/script/enhance_sdk.sh'
+alias enhance-sdk='java -jar ~/Development/Enhance/enhance-*-all.jar'
