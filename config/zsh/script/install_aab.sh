@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # https://developer.android.com/studio/command-line/bundletool?hl=zh-cn
+# https://github.com/google/bundletool
 
 aab_file=$1
 apks_file=${aab_file/.aab/.apks}
@@ -48,8 +49,15 @@ echo "ks_key_pass=$ks_key_pass"
 
 bundletool_ver="1.13.2"
 bundletool_jar="$bundletool_path/bundletool-all-${bundletool_ver}.jar"
+bundletool_url="https://github.com/google/bundletool/releases/download/1.13.2/bundletool-all-${bundletool_ver}.jar"
 if [[ ! -e $bundletool_jar ]]; then
-    wget "https://github.com/google/bundletool/releases/download/1.13.2/bundletool-all-${bundletool_ver}.jar"
+    rm bundletool-all-*.jar
+    wget $bundletool_url
+fi
+
+if [[ ! -e $bundletool_jar ]]; then
+    "Download failre, please muanally download $bundletool_jar to $bundletool_path"
+    exit 0
 fi
 
 
@@ -57,6 +65,8 @@ if [[ -e "$apks_file" ]]; then
     echo "rm cache apks file!"
     rm "$apks_file"
 fi
+
+echo "execute bundletool version is $bundletool_ver"
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") build-apks"
 java -jar $bundletool_jar build-apks --bundle="$aab_file" --output="$apks_file" --ks=$ks_file --ks-pass=pass:$ks_pass --ks-key-alias=$ks_key_alias --key-pass=pass:$ks_key_pass
