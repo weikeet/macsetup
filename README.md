@@ -51,14 +51,19 @@ bash ~/.macsetup/env/oh_my_zsh_fixed.sh
 - [sourabhbajaj/mac-setup/](https://sourabhbajaj.com/mac-setup/)
 
 ### shell
+
 - [Zsh 开发指南](https://zhuanlan.zhihu.com/p/28900182)
 - [shell 数组、字典、source、split](https://blog.csdn.net/u014297722/article/details/54601660)
 - [fixed declare: -A: invalid option](https://stackoverflow.com/questions/6047648/associative-arrays-error-declare-a-invalid-option)
 - [10分钟入门Shell脚本编程](https://juejin.cn/post/6844903553119748109)
 - [Shell 脚本常用语法](https://juejin.cn/post/6962032698697187364)
 - [Shell](http://billie66.github.io/TLCL/book/index.html)
+- [如何优雅地解析命令行选项](https://juejin.cn/post/7108908752174579743)
+- [如何优雅地处理命令行参数？](https://mp.weixin.qq.com/s?__biz=MzI2OTA3NTk3Ng==&mid=2649284881&idx=1&sn=a5e1039c159422ab90ac97264147b0de)
+- [这样处理shell脚本参数，爽多了](https://cloud.tencent.com/developer/article/1629932)
 
 ### Terminal Beautify
+
 - [oh-my-zsh](https://ohmyz.sh/)
 - [iTerm2 app](https://iterm2.com/)
 - [Alacritty app](https://alacritty.com/)
