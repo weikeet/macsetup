@@ -42,21 +42,21 @@ if [[ ! -e $bundletool_jar ]]; then
 fi
 
 
-if [[ -e $apks_file ]]; then
+if [[ -e "$apks_file" ]]; then
     echo "rm cache apks file!"
-    rm $apks_file
+    rm "$apks_file"
 fi
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") build-apks"
-java -jar $bundletool_jar build-apks --bundle=$aab_file --output=$apks_file --ks=$ks_file --ks-pass=pass:$ks_pass --ks-key-alias=$ks_key_alias --key-pass=pass:$ks_key_pass
+java -jar $bundletool_jar build-apks --bundle="$aab_file" --output="$apks_file" --ks=$ks_file --ks-pass=pass:$ks_pass --ks-key-alias=$ks_key_alias --key-pass=pass:$ks_key_pass
 
-if [[ ! -e $apks_file ]]; then
+if [[ ! -e "$apks_file" ]]; then
     echo "build-apks error!"
     exit 0
 fi
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") install-apks"
 
-java -jar $bundletool_jar install-apks --apks=$apks_file
+java -jar $bundletool_jar install-apks --apks="$apks_file"
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") end"
