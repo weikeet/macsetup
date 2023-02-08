@@ -4,9 +4,20 @@
 
 aab_file=$1
 apks_file=${aab_file/.aab/.apks}
+file_dir=$(dirname $aab_file)
 
 echo "input aab=$aab_file"
 echo "output apks=$apks_file"
+
+# manifest_file="$file_dir/base/manifest/AndroidManifest.xml"
+# if [[ -e $manifest_file ]]; then
+#     echo "rm cache manifest file!"
+#     rm $manifest_file
+# fi
+# unzip "$aab_file" "base/manifest/*" -d "$file_dir"
+
+# versionName=$(cat $manifest_file | grep "versionName" | awk -F '"' '{print $2}')
+# echo $versionName
 
 bundletool_path=$HOME/Development/bundletool
 if [[ ! -e $bundletool_path ]]; then
