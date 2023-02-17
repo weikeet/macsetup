@@ -19,3 +19,6 @@ alias repoupdate='bash ~/.macsetup/config/zsh/script/fetch_repo_name.sh'
 alias dockersh='bash ~/.macsetup/config/zsh/script/dockersh.sh'
 alias enhance-install='bash ~/.macsetup/config/zsh/script/enhance_sdk.sh'
 alias enhance-sdk='java -jar ~/Development/Enhance/enhance-*-all.jar'
+
+alias cafully-agent='bash ~/.macsetup/config/zsh/script/cafully_agent.sh'
+alias gradlew='bash ~/.macsetup/config/zsh/script/gradlew.sh'
