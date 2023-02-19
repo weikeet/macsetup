@@ -22,3 +22,4 @@ alias enhance-sdk='java -jar ~/Development/Enhance/enhance-*-all.jar'
 
 alias cafully-agent='bash ~/.macsetup/config/zsh/script/cafully_agent.sh'
 alias gradlew='bash ~/.macsetup/config/zsh/script/gradlew.sh'
+alias brew-root-formulae='bash ~/.macsetup/config/zsh/script/brew_root_formulae.sh'
