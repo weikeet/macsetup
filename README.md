@@ -16,7 +16,7 @@ macOS development environment auto setup.
 只需要执行以下代码即可：
 
 ```shell
-curl https://raw.githubusercontent.com/lecymeng/mac-setup/master/setup.sh | sh && cd ~/.macsetup && zsh install.sh
+curl https://raw.githubusercontent.com/weikeet/macsetup/master/setup.sh | sh && cd ~/.macsetup && zsh install.sh
 ```
 
 ### 手动执行
@@ -24,7 +24,7 @@ curl https://raw.githubusercontent.com/lecymeng/mac-setup/master/setup.sh | sh &
 手动 clone 到 `~/.macsetup` 目录下，然后执行 `zsh install.sh` 即可。
 
 ```shell
-git clone https://github.com/lecymeng/mac-setup.git ~/.macsetup
+git clone https://github.com/lecymeng/macsetup.git ~/.macsetup
 
 cd ~/.macsetup && zsh install.sh
 ```
