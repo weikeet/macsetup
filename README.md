@@ -24,7 +24,7 @@ curl https://raw.githubusercontent.com/weikeet/macsetup/master/setup.sh | sh && 
 手动 clone 到 `~/.macsetup` 目录下，然后执行 `zsh install.sh` 即可。
 
 ```shell
-git clone https://github.com/lecymeng/macsetup.git ~/.macsetup
+git clone https://github.com/weikeet/macsetup.git ~/.macsetup
 
 cd ~/.macsetup && zsh install.sh
 ```

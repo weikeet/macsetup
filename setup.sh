@@ -8,9 +8,9 @@ if [[ -e ~/.macsetup ]]; then
         cd ~/.macsetup && git pull --ff-only
     else
         mv ~/.macsetup ~/.macsetup.bak
-        git clone https://github.com/lecymeng/mac-setup.git ~/.macsetup
+        git clone https://github.com/weikeet/macsetup.git ~/.macsetup
     fi
 else
     # --depth=1
-    git clone https://github.com/lecymeng/mac-setup.git ~/.macsetup
+    git clone https://github.com/weikeet/macsetup.git ~/.macsetup
 fi
