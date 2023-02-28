@@ -33,8 +33,13 @@ echo -n "\n${tty_green}是否安装 推荐的 App (建议选择)(y/n): ${tty_res
 read IS_INSTALL_RECOMMEND_APP
 
 
-echo -n "\n${tty_green}请输入用户密码: ${tty_reset}"
-read -s USER_PWD
+USER_PWD=""
+jdk=$(ls /Library/Java/JavaVirtualMachines/microsoft-* |grep jdk)
+if [[ $jdk == "" ]]; then
+    # print_red "You have not installed open jdk"
+    echo -n "\n${tty_green}请输入用户密码: ${tty_reset}"
+    read -s USER_PWD
+fi
 
 
 echo ""
@@ -101,7 +106,9 @@ bash env/oh_my_zsh.sh
 
 bash env/python_venv.sh
 
-bash env/open_jdk_install.sh $USER_PWD
+if [[ $USER_PWD != "" ]]; then
+    bash env/open_jdk_install.sh $USER_PWD
+fi
 
 if [[ $IS_SETUP_IOS == "y" ]]; then
     bash install-ios.sh
