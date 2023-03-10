@@ -41,7 +41,7 @@ source ~/.macsetup/config/zsh/alias.zsh
 source ~/.macsetup/config/zsh/alias_android.zsh
 
 # local private config
-[ -f ~/.macsetup/local/.zshrc.local.sh ] && source ~/.macsetup/local/.zshrc.local.sh
+[ -f ~/.macsetup/.local/.zshrc.local.sh ] && source ~/.macsetup/.local/.zshrc.local.sh
 
 # eval "$(starship init zsh)"
 
