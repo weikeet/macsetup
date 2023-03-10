@@ -84,7 +84,11 @@ function brew_install_formulae() {
         print_yellow "You have installed $1"
     else
         print_green "Installing formulae $1"
-        brew install $1
+        if is_arm_cpu; then
+            arch -arm64 brew install $1
+        else
+            brew install $1
+        fi
     fi
 }
 
