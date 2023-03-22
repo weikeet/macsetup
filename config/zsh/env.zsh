@@ -21,8 +21,8 @@ source ~/Development/PythonEnv/venv3/bin/activate
 
 
 # Flutter image
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+# export PUB_HOSTED_URL=https://pub.flutter-io.cn
+# export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 # Flutter release
 # https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json
 # https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_{arch}_{version}-stable.zip
