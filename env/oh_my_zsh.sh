@@ -52,3 +52,12 @@ ln -s ~/.macsetup/config/zsh/.zshrc ~/.zshrc
 yss_theme=~/.oh-my-zsh/custom/themes/yss.zsh-theme
 rm $yss_theme
 ln -s ~/.macsetup/config/zsh/theme/yss.zsh-theme $yss_theme
+
+personal_config=$HOME/Development/zsh/zshrc.sh
+if [[ ! -e $personal_config ]]; then
+    if [[ ! -e $HOME/Development/zsh ]]; then
+        mkdir -p $HOME/Development/zsh
+    fi
+    print_green "Create personal config file: $personal_config"
+    touch $personal_config
+fi
