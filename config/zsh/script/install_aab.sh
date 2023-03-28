@@ -78,7 +78,7 @@ if [[ -e "$apks_file" ]]; then
     echo "Found cache apks file!"
 
     if [[ -e "$log_file" ]]; then
-        log_aab_modify_time=$(cat $log_file | grep "aabModifyTime" | awk -F '=' '{print $2}')
+        log_aab_modify_time=$(cat "$log_file" | grep "aabModifyTime" | awk -F '=' '{print $2}')
 
         if [[ $log_aab_modify_time = $aab_modify_time ]]; then
             echo "Install cache apks file!"
@@ -113,6 +113,6 @@ java -jar $bundletool_jar install-apks --apks="$apks_file"
 echo "$(date +"%Y.%m.%d %H:%M:%S") end"
 
 # 保存安装的 aab 文件的修改时间
-echo "aabModifyTime=$aab_modify_time" >$log_file
+echo "aabModifyTime=$aab_modify_time" >"$log_file"
 # 读取上次安装的 aab 文件的修改时间
-# log_aab_modify_time=$(cat $log_file | grep "aabModifyTime" | awk -F '=' '{print $2}')
+# log_aab_modify_time=$(cat "$log_file" | grep "aabModifyTime" | awk -F '=' '{print $2}')
