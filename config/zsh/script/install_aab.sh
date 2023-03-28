@@ -13,7 +13,7 @@ cacheType=$2
 echo "input aab=$aab_file"
 echo "output apks=$apks_file"
 
-aab_modify_time=$(date  -r$(stat -f "%m" $static) "+%Y%m%d%H%M%S")
+aab_modify_time=$(date -r$(stat -f "%m" $static) "+%Y%m%d%H%M%S")
 echo "aab modify time=$aab_modify_time"
 
 # manifest_file="$file_dir/base/manifest/AndroidManifest.xml"
@@ -43,10 +43,10 @@ ks_key_pass=ddd
     exit 0
 fi
 
-ks_file=$(cat $config_path |grep "ks_file" | awk -F '=' '{print $2}')
-ks_pass=$(cat $config_path |grep "ks_pass" | awk -F '=' '{print $2}')
-ks_key_alias=$(cat $config_path |grep "ks_key_alias" | awk -F '=' '{print $2}')
-ks_key_pass=$(cat $config_path |grep "ks_key_pass" | awk -F '=' '{print $2}')
+ks_file=$(cat $config_path | grep "ks_file" | awk -F '=' '{print $2}')
+ks_pass=$(cat $config_path | grep "ks_pass" | awk -F '=' '{print $2}')
+ks_key_alias=$(cat $config_path | grep "ks_key_alias" | awk -F '=' '{print $2}')
+ks_key_pass=$(cat $config_path | grep "ks_key_pass" | awk -F '=' '{print $2}')
 
 echo "ks_file=$ks_file"
 echo "ks_pass=$ks_pass"
@@ -66,15 +66,13 @@ if [[ ! -e $bundletool_jar ]]; then
     exit 0
 fi
 
-
-if [ cache="-noneCache" ]; then
+if [[ $cache = "-noneCache" ]]; then
     echo "Disable cache"
     if [[ -e "$apks_file" ]]; then
         echo "Found cache apks file and delete it!"
         rm "$apks_file"
     fi
 fi
-
 
 if [[ -e "$apks_file" ]]; then
     echo "Found cache apks file!"
@@ -98,7 +96,6 @@ if [[ -e "$apks_file" ]]; then
     fi
 fi
 
-
 echo "execute bundletool version is $bundletool_ver"
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") build-apks"
@@ -116,6 +113,6 @@ java -jar $bundletool_jar install-apks --apks="$apks_file"
 echo "$(date +"%Y.%m.%d %H:%M:%S") end"
 
 # 保存安装的 aab 文件的修改时间
-echo "aabModifyTime=$aab_modify_time" > $log_file
+echo "aabModifyTime=$aab_modify_time" >$log_file
 # 读取上次安装的 aab 文件的修改时间
 # log_aab_modify_time=$(cat $log_file | grep "aabModifyTime" | awk -F '=' '{print $2}')
