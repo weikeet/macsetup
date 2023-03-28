@@ -5,10 +5,16 @@
 
 aab_file=$1
 apks_file=${aab_file/.aab/.apks}
+log_file=${aab_file/.aab/.log}
 file_dir=$(dirname $aab_file)
+
+cacheType=$2
 
 echo "input aab=$aab_file"
 echo "output apks=$apks_file"
+
+aab_modify_time=$(date  -r$(stat -f "%m" $static) "+%Y%m%d%H%M%S")
+echo "aab modify time=$aab_modify_time"
 
 # manifest_file="$file_dir/base/manifest/AndroidManifest.xml"
 # if [[ -e $manifest_file ]]; then
@@ -61,10 +67,37 @@ if [[ ! -e $bundletool_jar ]]; then
 fi
 
 
-if [[ -e "$apks_file" ]]; then
-    echo "rm cache apks file!"
-    rm "$apks_file"
+if [ cache="-noneCache" ]; then
+    echo "Disable cache"
+    if [[ -e "$apks_file" ]]; then
+        echo "Found cache apks file and delete it!"
+        rm "$apks_file"
+    fi
 fi
+
+
+if [[ -e "$apks_file" ]]; then
+    echo "Found cache apks file!"
+
+    if [[ -e "$log_file" ]]; then
+        log_aab_modify_time=$(cat $log_file | grep "aabModifyTime" | awk -F '=' '{print $2}')
+
+        if [[ $log_aab_modify_time = $aab_modify_time ]]; then
+            echo "Install cache apks file!"
+            echo "$(date +"%Y.%m.%d %H:%M:%S") install-apks"
+            java -jar $bundletool_jar install-apks --apks="$apks_file"
+            echo "$(date +"%Y.%m.%d %H:%M:%S") end"
+            exit 0
+        else
+            echo "Cache apks file is not match, delete it!"
+            rm "$apks_file"
+        fi
+    else
+        echo "Cache apks file is not match, delete it!"
+        rm "$apks_file"
+    fi
+fi
+
 
 echo "execute bundletool version is $bundletool_ver"
 
@@ -81,3 +114,8 @@ echo "$(date +"%Y.%m.%d %H:%M:%S") install-apks"
 java -jar $bundletool_jar install-apks --apks="$apks_file"
 
 echo "$(date +"%Y.%m.%d %H:%M:%S") end"
+
+# 保存安装的 aab 文件的修改时间
+echo "aabModifyTime=$aab_modify_time" > $log_file
+# 读取上次安装的 aab 文件的修改时间
+# log_aab_modify_time=$(cat $log_file | grep "aabModifyTime" | awk -F '=' '{print $2}')
