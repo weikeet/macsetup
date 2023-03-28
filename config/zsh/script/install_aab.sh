@@ -13,7 +13,7 @@ cacheType=$2
 echo "input aab=$aab_file"
 echo "output apks=$apks_file"
 
-aab_modify_time=$(date -r$(stat -f "%m" $static) "+%Y%m%d%H%M%S")
+aab_modify_time=$(date -r$(stat -f "%m" "$aab_file") "+%Y%m%d%H%M%S")
 echo "aab modify time=$aab_modify_time"
 
 # manifest_file="$file_dir/base/manifest/AndroidManifest.xml"
@@ -34,12 +34,13 @@ cd $bundletool_path
 
 config_path=$bundletool_path/install_aab_config.ini
 if [[ ! -e $config_path ]]; then
-    echo "Please write keystore info to $config_path, eg:
+    echo "
+Please write keystore info to $config_path, eg:
 ks_file=/User/miku/aaa.ks
 ks_pass=bbb
 ks_key_alias=ccc
 ks_key_pass=ddd
-    "
+"
     exit 0
 fi
 
@@ -87,7 +88,7 @@ if [[ -e "$apks_file" ]]; then
             echo "$(date +"%Y.%m.%d %H:%M:%S") end"
             exit 0
         else
-            echo "Cache apks file is not match, delete it!"
+            echo "aab modify time is not match, delete cache apks file!"
             rm "$apks_file"
         fi
     else
