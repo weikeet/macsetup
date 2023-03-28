@@ -47,5 +47,5 @@ fi
 
 cd ~/Development
 
-install_ms_open_jdk $USER_PWD 11 11.0.15
-# install_ms_open_jdk $USER_PWD 17 17.0.3
+# install_ms_open_jdk $USER_PWD 11 11.0.18
+install_ms_open_jdk $USER_PWD 17 17.0.6
