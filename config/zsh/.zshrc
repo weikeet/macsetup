@@ -31,6 +31,8 @@ source $ZSH/oh-my-zsh.sh
 # Config for user ##############################################################
 # ##############################################################################
 
+export LC_ALL=en_US.UTF-8
+
 # env
 source ~/.macsetup/config/zsh/env.zsh
 
