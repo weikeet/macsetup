@@ -3,4 +3,4 @@
 source ~/.macsetup/base.sh
 
 echo ""
-print_cyan "Installing android development (TODO)"
+print_cyan "Installing iOS development (TODO)"

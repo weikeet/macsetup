@@ -102,26 +102,28 @@ bash env/bin_links.sh
 
 bash env/git_config.sh
 
-bash env/oh_my_zsh.sh
+bash env/oh_my_zsh.sh &
 
-bash env/python_venv.sh
+bash env/python_venv.sh &
 
 if [[ $USER_PWD != "" ]]; then
     bash env/open_jdk_install.sh $USER_PWD
 fi
 
 if [[ $IS_SETUP_IOS == "y" ]]; then
-    bash install-ios.sh
+    bash install-ios.sh &
 fi
 
 if [[ $IS_SETUP_ANDROID == "y" ]]; then
-    bash install-android.sh
+    bash install-android.sh &
 fi
 
 if [[ $IS_SETUP_ANDROID_TOOL == "y" ]]; then
-    bash env/android_tools.sh
+    bash env/android_tools.sh &
 fi
 
 if [[ $IS_INSTALL_RECOMMEND_APP == "y" ]]; then
-    bash install-cask-recommend.sh
+    bash install-cask-recommend.sh &
 fi
+
+wait
