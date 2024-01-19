@@ -67,6 +67,14 @@ elif [ $# -eq 5 ]; then
     ./$output_file $2 $3 $4 $5
 elif [ $# -eq 6 ]; then
     ./$output_file $2 $3 $4 $5 $6
+elif [ $# -eq 7 ]; then
+    ./$output_file $2 $3 $4 $5 $6 $7
+elif [ $# -eq 8 ]; then
+    ./$output_file $2 $3 $4 $5 $6 $7 $8
+elif [ $# -eq 9 ]; then
+    ./$output_file $2 $3 $4 $5 $6 $7 $8 $9
+elif [ $# -eq 10 ]; then
+    ./$output_file $2 $3 $4 $5 $6 $7 $8 $9 $10
 else
     echo "Too many arguments: more than 5."
 fi
