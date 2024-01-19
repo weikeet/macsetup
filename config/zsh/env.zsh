@@ -1,6 +1,8 @@
 # JDK Manager
 # Microsoft jdk: https://docs.microsoft.com/en-us/java/openjdk/download
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-17.jdk/Contents/Home
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-11.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home
 
 # /usr/libexec/java_home -V
 # Matching Java Virtual Machines (2):

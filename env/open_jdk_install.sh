@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 USER_PWD=$1
 
@@ -7,6 +7,7 @@ source ~/.macsetup/base.sh
 echo ""
 print_cyan "Starting setup open jdk..."
 
+# https://learn.microsoft.com/zh-cn/java/openjdk/download
 
 function install_ms_open_jdk() {
     passwd=$1
@@ -47,5 +48,5 @@ fi
 
 cd ~/Development
 
-# install_ms_open_jdk $USER_PWD 11 11.0.18
-install_ms_open_jdk $USER_PWD 17 17.0.6
+install_ms_open_jdk $USER_PWD 11 11.0.21
+# install_ms_open_jdk $USER_PWD 17 17.0.9
