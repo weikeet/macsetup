@@ -23,10 +23,10 @@ print_cyan "Installing Homebrew cask recommended..."
 brew_install_cask_app "zeplin" "Zeplin.app"
 
 # 开源 sqlite 数据库浏览器
-brew_install_cask_app "db-browser-for-sqlite" "DB Browser for SQLite.app"
+# brew_install_cask_app "db-browser-for-sqlite" "DB Browser for SQLite.app"
 
 # 开源 mac 清理加速工具
-brew_install_cask_app "tencent-lemon" "Tencent Lemon.app"
+# brew_install_cask_app "tencent-lemon" "Tencent Lemon.app"
 
 # 开源 Hosts 管理工具
 brew_install_cask_app "switchhosts" "SwitchHosts.app"

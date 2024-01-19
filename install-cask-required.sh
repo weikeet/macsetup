@@ -9,7 +9,7 @@ print_cyan "Installing Homebrew cask required..."
 brew_install_cask_app "iterm2" "iTerm.app"
 
 # 更快速的终端应用
-brew_install_cask_app "alacritty" "Alacritty.app"
+# brew_install_cask_app "alacritty" "Alacritty.app"
 
 if [[ ! -e ~/.config/alacritty ]]; then
     mkdir -p ~/.config/alacritty
@@ -21,7 +21,7 @@ ln -s ~/.macsetup/config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.y
 brew_install_cask_app "google-chrome" "Google Chrome.app"
 
 # 工作必备 团队沟通和交流
-brew_install_cask_app "slack" "Slack.app"
+# brew_install_cask_app "slack" "Slack.app"
 
 # 国民级应用
 brew_install_cask_app "wechat" "WeChat.app"
