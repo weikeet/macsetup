@@ -1,0 +1,19 @@
+
+zsh ssh_add_git.sh weikeet github https://github.com/settings/keys
+
+zsh ssh_add_git.sh weikeet gitlab https://gitlab.com/-/profile/keys
+
+zsh ssh_add_git.sh weikeet gitee https://gitee.com/profile/sshkeys
+
+zsh ssh_add_server.sh unraid.weiwei 22 root 192.168.2.233
+zsh ssh_add_server.sh unraid.weiwei.frp 7001 root 81.70.11.147
+
+# Too many authentication failures
+# zsh ssh_add_server.sh dsm.weiwei 22 Weiwei 192.168.2.223
+# zsh ssh_add_server.sh dsm.weiwei.frp 7003 Weiwei 81.70.11.147
+
+zsh ssh_add_server.sh vm.centos 22 root 192.168.2.217
+zsh ssh_add_server.sh vm.centos.frp 7000 root 81.70.11.147
+
+# Too many authentication failures
+# zsh ssh_add_server.sh server.tencent 22 root 81.70.11.147

@@ -1,0 +1,23 @@
+Host unraid.weiwei
+    HostName 192.168.2.233
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_rsa.unraid.weiwei
+
+Host unraid.weiwei.frp
+    HostName 81.70.11.147
+    User root
+    Port 7001
+    IdentityFile ~/.ssh/id_rsa.unraid.weiwei.frp
+
+Host vm.centos
+    HostName 192.168.2.217
+    User root
+    Port 22
+    IdentityFile ~/.ssh/id_rsa.vm.centos
+
+Host vm.centos.frp
+    HostName 81.70.11.147
+    User root
+    Port 7000
+    IdentityFile ~/.ssh/id_rsa.vm.centos.frp
