@@ -33,14 +33,53 @@ alias hprof-c='bash ~/.macsetup/config/zsh/script/hprof-c.sh'
 alias adb-pinm='adb shell am start -n com.sankuai.hades.sample/com.sankuai.hades.sample.MainActivity'
 alias adb-mtd='adb shell am start -n com.sankuai.meituan/com.meituan.android.hades.HadesDevActivity'
 alias adb-ptm='adb shell am start -n com.sankuai.hades.dev/com.sankuai.hades.dev.MainActivity'
+alias adb-getprop='bash ~/.macsetup/config/zsh/script/adb_getprop.sh'
+
+function javams() {
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-$1.jdk/Contents/Home
+    # export PATH="$JAVA_HOME/bin:$PATH"
+    java -version
+}
+
+function javabrew() {
+    export JAVA_HOME=/opt/homebrew/opt/openjdk@$1/libexec/openjdk.jdk/Contents/Home
+    # export PATH="$JAVA_HOME/bin:$PATH"
+    java -version
+}
 
 function gcbr() {
     branch_name=$1
     git checkout -b $branch_name origin/$branch_name
 }
 
+function gct() {
+    branch_name=$1
+    tagx=$2
+    git checkout -b $branch_name $tagx
+}
+
+function adbff() {
+    pkg=$1
+    if [ "$pkg" = "all" ]; then
+        echo "force-stop com.sankuai.meituan"
+        adb shell am force-stop com.sankuai.meituan
+
+        echo "force-stop com.sankuai.hades.sample"
+        adb shell am force-stop com.sankuai.hades.sample
+    elif [ "$pkg" = "pin" ]; then
+        echo "force-stop com.sankuai.hades.sample"
+        adb shell am force-stop com.sankuai.hades.sample
+    elif [ "$pkg" = "mt" ]; then
+        echo "force-stop com.sankuai.meituan"
+        adb shell am force-stop com.sankuai.meituan
+    else
+        echo "force-stop $pkg"
+        adb shell am force-stop $pkg
+    fi
+}
+
 function adb-st() {
-    # 
+    #
 }
 
 function md5s() {
@@ -83,7 +122,7 @@ function dockersh() {
 
     docker_id=$(docker ps | grep $name | awk -F ' ' '{print $1}')
 
-    if [[ $docker_id ]];then
+    if [[ $docker_id ]]; then
         echo "$name Docker 服务已启动, id=$docker_id"
     else
         echo "$name Docker 服务未启动."
@@ -94,9 +133,9 @@ function dockersh() {
 }
 
 function brew-root-formulae() {
-    brew deps --installed --formulae | \
-    awk -F'[: ]+' \
-    '{
+    brew deps --installed --formulae |
+        awk -F'[: ]+' \
+            '{
         packages[$1]++
         for (i = 2; i <= NF; i++)
             dependencies[$i]++
