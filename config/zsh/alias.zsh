@@ -3,7 +3,12 @@ alias fix-spctl="sudo spctl --master-disable"
 alias fix-demage="sudo xattr -rd com.apple.quarantine"
 # param /Applications/xx.app
 alias fix-codesign="sudo codesign --force --deep --sign - "
-
+alias fix-quarantine="sudo xattr -r -d com.apple.quarantine"
+# 禁止在移动存储器生成 .DS_Store
+alias disable-dsu='defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true'
+# 禁止在网络驱动器生成 .DS_Store
+alias disable-dsn='defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true'
+# 查看 CPU 型号
 alias see-cpu='sysctl -n machdep.cpu.brand_string'
 
 # compile c++/java/kotlin code and execute
@@ -20,6 +25,7 @@ alias enhance-sdk='java -jar ~/Development/Enhance/enhance-*-all.jar'
 
 alias cafully-agent='bash ~/.macsetup/config/zsh/script/cafully_agent.sh'
 alias gradlew='bash ~/.macsetup/config/zsh/script/gradlew.sh'
+alias brew-root-formulae='bash ~/.macsetup/config/zsh/script/brew_root_formulae.sh'
 
 # Usage: git-find <keyword>, eg: git-find merge
 alias git-find='cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh |grep'
