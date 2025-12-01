@@ -1,6 +1,14 @@
 # 配置 Homebrew 可执行程序存放路径
 export PATH="$PATH:/opt/homebrew/bin"
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # Yarn
 export PATH=$PATH:$HOME/.yarn/bin
 export PATH=$PATH:$HOME/.config/yarn/global/node_modules/.bin
