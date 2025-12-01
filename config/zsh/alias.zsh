@@ -39,7 +39,8 @@ alias hprof-c='bash ~/.macsetup/config/zsh/script/hprof-c.sh'
 alias adb-pinm='adb shell am start -n com.sankuai.hades.sample/com.sankuai.hades.sample.MainActivity'
 alias adb-mtd='adb shell am start -n com.sankuai.meituan/com.meituan.android.hades.HadesDevActivity'
 alias adb-ptm='adb shell am start -n com.sankuai.hades.dev/com.sankuai.hades.dev.MainActivity'
-alias adb-getprop='bash ~/.macsetup/config/zsh/script/adb_getprop.sh'
+alias adb-getprop='bash ~/.macsetup/config/zsh/script/adb/adb_getprop.sh'
+alias adb-cap='bash ~/.macsetup/config/zsh/script/adb/adb_screencap.sh'
 
 function javams() {
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/microsoft-$1.jdk/Contents/Home
